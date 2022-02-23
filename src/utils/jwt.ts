@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import JwtInterface from '../interfaces/JwtInterfaces';
 
-const JWT_SECRET = 'SegredoTrybe2022';
+export const JWT_SECRET = 'SegredoTrybe2022';
 
 export const signToken = (payload: JwtInterface) => jwt.sign(payload, JWT_SECRET, {
   algorithm: 'HS256',
