@@ -5,7 +5,7 @@ import UserInterface from '../interfaces/UserInterface';
 export const add = async (user: UserInterface) => {
   const [result] = await connection
     .query(
-      'INSERT INTO users (username, classe, level, password) VALUES (?, ?, ?, ?);',
+      'INSERT INTO Trybesmith.Users (username, classe, level, password) VALUES (?, ?, ?, ?);',
       [user.username, user.classe, user.level, user.password],
     );
 
