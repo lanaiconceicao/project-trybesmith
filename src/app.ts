@@ -10,10 +10,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+app.use('/users', UserRouter);
+
 app.use(JoiError);
 app.use(DomainError);
 app.use(ErrorMiddleware);
-
-app.use('/users', UserRouter);
 
 export default app;
