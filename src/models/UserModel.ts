@@ -1,6 +1,6 @@
 import { OkPacket } from 'mysql2';
 import connection from './connection';
-import UserInterface from '../interfaces/UserInterface';
+import { UserInterface } from '../interfaces/UserInterface';
 
 export const add = async (user: UserInterface) => {
   const [result] = await connection
