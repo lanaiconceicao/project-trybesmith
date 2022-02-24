@@ -1,5 +1,5 @@
 import JwtInterface from '../interfaces/JwtInterfaces';
-import UserInterface from '../interfaces/UserInterface';
+import { UserInterface } from '../interfaces/UserInterface';
 import * as UserModel from '../models/UserModel';
 import { signToken } from '../utils/jwt';
 

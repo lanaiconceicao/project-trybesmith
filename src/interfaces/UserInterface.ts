@@ -1,8 +1,10 @@
-interface UserInterface {
+export interface UserInterface {
   username: string;
   classe: string;
   level: number;
   password: string;
 }
 
-export default UserInterface;
+export interface UserIdInterface extends UserInterface {
+  id: number;
+}
