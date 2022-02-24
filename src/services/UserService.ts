@@ -5,6 +5,7 @@ import { signToken } from '../utils/jwt';
 
 export const addService = async (user: UserInterface) => {
   const addUser = await UserModel.add(user);
+  
   const payload: JwtInterface = {
     id: addUser.id,
     username: addUser.username,
