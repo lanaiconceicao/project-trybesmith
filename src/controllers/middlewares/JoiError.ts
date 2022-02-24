@@ -10,9 +10,13 @@ const JoiError = (err: ErrorInterface, req: Request, res: Response, next: NextFu
   enum ErrorCode {
     badRequest = 400,
     unprocessableEntity = 422,
+    unauthorized = 401,
   }
 
   let status;
+
+  console.log(err, 'erro do login');
+  console.log(err, 'erro do add');
 
   if (err.details[0].type.includes('required')) {
     status = ErrorCode.badRequest;
