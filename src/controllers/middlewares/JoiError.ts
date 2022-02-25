@@ -15,9 +15,6 @@ const JoiError = (err: ErrorInterface, req: Request, res: Response, next: NextFu
 
   let status;
 
-  console.log(err, 'erro do login');
-  console.log(err, 'erro do add');
-
   if (err.details[0].type.includes('required')) {
     status = ErrorCode.badRequest;
   } else {
