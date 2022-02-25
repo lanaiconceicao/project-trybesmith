@@ -2,7 +2,7 @@ import rescue from 'express-rescue';
 import { Request, Response } from 'express';
 import validateSchema from './joi/validateSchema';
 import { ProductSchema } from './joi/ProductSchema';
-import { ProductService } from '../services/ProductService';
+import { ProductService, getAllProducts } from '../services/ProductService';
 
 export const addProduct = rescue(async (req: Request, res: Response) => {
   validateSchema(ProductSchema, req.body);
@@ -10,5 +10,7 @@ export const addProduct = rescue(async (req: Request, res: Response) => {
   res.status(201).json({ item: product }); 
 });
 
-// retirar:
-export const teste = 0;
+export const getAllProductsController = rescue(async (req: Request, res: Response) => {
+  const products = await getAllProducts();
+  res.status(200).json(products); 
+});

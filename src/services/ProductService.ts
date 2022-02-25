@@ -6,7 +6,7 @@ export const ProductService = async (product: ProductInterface) => {
   return addProduct;
 };
 
-export const getAll = async () => {
+export const getAllProducts = async () => {
   const products = await ProductModel.getAllProducts();
   return products;
 };
