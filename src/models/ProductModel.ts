@@ -1,7 +1,7 @@
-import ProductInterface from '../interfaces/ProductInterface';
+import { ProductInterface } from '../interfaces/ProductInterface';
 import connection from './connection';
 
-export const addProduct = async (product: ProductInterface) => {
+export const add = async (product: ProductInterface) => {
   const [result] = await connection
     .query(
       'INSERT INTO Trybesmith.Products (name, amount) VALUES (?, ?);',

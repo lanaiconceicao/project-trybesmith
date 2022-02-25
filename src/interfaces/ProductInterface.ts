@@ -1,6 +1,6 @@
-interface ProductInterface {
-  name: 'Espada longa',
-  amount: '30 peças de ouro',
+export interface ProductInterface {
+  name: string,
+  amount: string,
 }
 
 export default ProductInterface;
