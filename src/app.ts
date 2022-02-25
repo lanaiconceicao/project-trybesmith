@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.use('/users', User);
 app.use('/login', Login);
+app.use('/products', Login);
 
 app.use(JoiError);
 app.use(ErrorMiddleware);
