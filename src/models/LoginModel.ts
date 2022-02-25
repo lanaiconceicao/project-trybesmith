@@ -1,6 +1,4 @@
-// import { OkPacket } from 'mysql2';
 import LoginInterface from '../interfaces/LoginInterface';
-// import { UserIdInterface } from '../interfaces/UserInterface';
 import connection from './connection';
 
 const LoginModel = async (login: LoginInterface) => {
