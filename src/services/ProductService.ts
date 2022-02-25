@@ -6,4 +6,7 @@ export const ProductService = async (product: ProductInterface) => {
   return addProduct;
 };
 
-export default ProductService;
+export const getAll = async () => {
+  const products = await ProductModel.getAllProducts();
+  return products;
+};
