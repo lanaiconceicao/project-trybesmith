@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import JoiError from './controllers/middlewares/JoiError';
 import DomainError from './controllers/middlewares/DomainError';
 import ErrorMiddleware from './controllers/middlewares/ErrorMiddleware';
-import { User, Login } from './routes/UsersRouter';
+import { User, Login, Products } from './routes/UsersRouter';
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use('/users', User);
 app.use('/login', Login);
-app.use('/products', Login);
+app.use('/products', Products);
 
 app.use(JoiError);
 app.use(ErrorMiddleware);

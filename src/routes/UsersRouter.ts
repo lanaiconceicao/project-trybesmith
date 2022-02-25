@@ -2,6 +2,7 @@ import { Router } from 'express';
 import LoginController from '../controllers/LoginController';
 import { addController } from '../controllers/UserController';
 import { addProduct } from '../controllers/ProductController';
+import JwtValidate from '../controllers/middlewares/JwtValidate';
 
 export const User = Router();
 export const Login = Router();
@@ -14,4 +15,4 @@ User.post('/', addController);
 Login.post('/', LoginController);
 
 // Create product
-Products.post('/', addProduct);
+Products.post('/', JwtValidate, addProduct);

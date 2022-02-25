@@ -11,3 +11,8 @@ export const signToken = (payload: JwtInterface) => jwt.sign(payload, JWT_SECRET
 export const verifyToken = (token: string) => {
   jwt.verify(token, JWT_SECRET, { algorithms: ['HS256'] });
 };
+
+export default {
+  signToken,
+  verifyToken,
+};

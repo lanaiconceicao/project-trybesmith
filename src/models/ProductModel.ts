@@ -1,3 +1,4 @@
+import { OkPacket } from 'mysql2';
 import { ProductInterface } from '../interfaces/ProductInterface';
 import connection from './connection';
 
@@ -8,11 +9,11 @@ export const add = async (product: ProductInterface) => {
       [product.name, product.amount],
     );
   
-  const getId = JSON.parse(JSON.stringify(result));
+  const { insertId } = <OkPacket> result;
 
   // ? não vai passar 'undefined' pra frente
   return {
-    id: getId[0]?.id,
+    id: insertId,
     name: product.name,
     amount: product.amount,
   };
