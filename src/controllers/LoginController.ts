@@ -1,5 +1,5 @@
 import rescue from 'express-rescue';
-import { Request, Response } from 'express';
+// import { Request, Response } from 'express';
 import validateSchema from './joi/validateSchema';
 import LoginSchema from './joi/LoginSchema';
 import LoginService from '../services/LoginService';
@@ -7,13 +7,13 @@ import LoginService from '../services/LoginService';
 // Se usar rescue, achar um type para o retorno da função
 // se usar try/catch dar o erro do joi no catch
 
-const LoginController = rescue(async (req: Request, res: Response): Promise<void> => {
+const LoginController = rescue(async (req, res) => {
   validateSchema(LoginSchema, req.body);
   
   const token = await LoginService(req.body);
 
-  if (!token) {
-    res.status(401).json({ error: 'Username or password invalid' });
+  if (token === false) {
+    return res.status(401).json({ error: 'Username or password invalid' });
   }
 
   res.status(200).json({ token }); 
