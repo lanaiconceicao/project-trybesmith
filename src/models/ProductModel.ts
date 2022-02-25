@@ -19,5 +19,10 @@ export const add = async (product: ProductInterface) => {
   };
 };
 
-// retirar:
-export const teste = 0;
+export const getAllProducts = async () => {
+  const [result] = await connection
+    .query(
+      'SELECT id, name, amount, orderId FROM Trybesmith.Products;',
+    );
+  return result;
+};
